@@ -1,4 +1,4 @@
-!/usr/bin/python3
+#!/usr/bin/python3
 # 102-magic_calculation.py
 # Fikadu Tessema <tfikadu76@gmail.com>
 
