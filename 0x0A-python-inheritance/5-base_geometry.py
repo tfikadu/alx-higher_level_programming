@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-'''
-Write an empty class BaseGeometry.
-'''
+"""module for base_geometry - no test cases needed"""
 
 
 class BaseGeometry:
+    """my BaseGeometry class"""
     pass
