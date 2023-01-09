@@ -1,0 +1,46 @@
+======================================
+Test cases for 1-my_list.py
+======================================
+
+>>> MyList = __import__('1-my_list').MyList
+
+>>> my_list = MyList()
+
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> print(my_list)
+[4, 2, 3]
+>>> my_list.print_sorted()
+[2, 3, 4]
+>>> print(my_list)
+[4, 2, 3]
+
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+
+my_list = MyList(3)
+Traceback (most recent call last):
+...
+TypeError: 'int' object is not iterable
+
+my_list = MyList(3.14)
+Traceback (most recent call last):
+...
+TypeError: 'float' object is not iterable
+
+my_list = MyList()
+Traceback (most recent call last):
+...
+TypeError: 'NoneType' object is not iterable
+
+>>> my_list.print_sorted([2, 3, 4, 5])
+Traceback (most recent call last):
+...
+TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+>>> my_list.print_sorted((2, 3, 4, 5))
+Traceback (most recent call last):
+...
+TypeError: print_sorted() takes 1 positional argument but 2 were given
