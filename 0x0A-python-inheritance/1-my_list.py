@@ -1,9 +1,16 @@
 #!/usr/bin/python3
-"""MyList class module- test cases in tests/1-my_list.txt"""
+"""
+===========================
+Module with class MyList
+===========================
+"""
 
 
 class MyList(list):
-    """my own class: MyList, inherits from list"""
+    """Class with method print_sorted"""
+    pass
+
     def print_sorted(self):
-        """print sorted list method"""
-        print(sorted(self))
+        """Methot that sorted a list"""
+
+        print(sorted(list(self)))
