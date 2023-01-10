@@ -1,41 +1,52 @@
 #!/usr/bin/python3
-"""Log parsing script."""
 import sys
 
-total_size = 0
-codes = {'200': 0, '301': 0, '400': 0, '401': 0,
-         '403': 0, '404': 0, '405': 0, '500': 0}
-iteration = 0
+
+def print_info():
+    print('File size: {:d}'.format(file_size))
+
+    for scode, code_times in sorted(status_codes.items()):
+        if code_times > 0:
+            print('{}: {:d}'.format(scode, code_times))
 
 
-def print_stats():
-    """Function that prints a resume of the stats."""
-    print("File size: {}".format(total_size))
-    for k, v in sorted(codes.items()):
-        if v is not 0:
-            print("{}: {}".format(k, v))
+status_codes = {
+    '200': 0,
+    '301': 0,
+    '400': 0,
+    '401': 0,
+    '403': 0,
+    '404': 0,
+    '405': 0,
+    '500': 0
+}
 
+lc = 0
+file_size = 0
 
 try:
     for line in sys.stdin:
-        line = line.split()
-        if len(line) >= 2:
-            tmp = iteration
-            if line[-2] in codes:
-                codes[line[-2]] += 1
-                iteration += 1
-            try:
-                total_size += int(line[-1])
-                if tmp == iteration:
-                    iteration += 1
-            except:
-                if tmp == iteration:
-                    continue
+        if lc != 0 and lc % 10 == 0:
+            print_info()
 
-        if iteration % 10 == 0:
-            print_stats()
+        pieces = line.split()
 
-    print_stats()
+        try:
+            status = int(pieces[-2])
 
+            if str(status) in status_codes.keys():
+                status_codes[str(status)] += 1
+        except:
+            pass
+
+        try:
+            file_size += int(pieces[-1])
+        except:
+            pass
+
+        lc += 1
+
+    print_info()
 except KeyboardInterrupt:
-    print_stats()
+    print_info()
+    raise
