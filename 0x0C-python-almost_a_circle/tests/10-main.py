@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 9-main """
+""" 10-main """
 from models.square import Square
 
 if __name__ == "__main__":

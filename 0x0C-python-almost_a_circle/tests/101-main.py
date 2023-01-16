@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 101-main """
+""" 101-main.py """
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
