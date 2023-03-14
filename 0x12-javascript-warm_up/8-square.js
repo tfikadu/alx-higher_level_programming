@@ -1,14 +1,11 @@
 #!/usr/bin/node
-// prints square of side n out of 'X' chars; n taken from first arg to script
-const n = Math.floor(Number(process.argv[2]));
-if (isNaN(n)) {
+const size = Math.floor(Number(process.argv[2]));
+if (isNaN(size)) {
   console.log('Missing size');
 } else {
-  for (let i = 0; i < n; i++) {
-    let line = '';
-    for (let j = 0; j < n; j++) {
-      line = line + 'X';
-    }
-    console.log(line);
+  for (let r = 0; r < size; r++) {
+    let row = '';
+    for (let c = 0; c < size; c++) row += 'X';
+    console.log(row);
   }
 }
