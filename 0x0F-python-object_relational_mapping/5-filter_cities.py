@@ -38,4 +38,3 @@ if __name__ == "__main__":
 
     if rows_selected is not None:
         print(", ".join([row[1] for row in rows_selected]))
-
