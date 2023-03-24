@@ -25,3 +25,4 @@ if __name__ == "__main__":
 
     for instance in session.query(State).order_by(State.id):
         print('{0}: {1}'.format(instance.id, instance.name))
+

@@ -25,3 +25,4 @@ if __name__ == '__main__':
     if rows_selected is not None:
         for row in rows_selected:
             print(row)
+
