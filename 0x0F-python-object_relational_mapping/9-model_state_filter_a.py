@@ -28,4 +28,3 @@ if __name__ == "__main__":
     if states is not None:
         for state in states:
             print('{0}: {1}'.format(state.id, state.name))
-
