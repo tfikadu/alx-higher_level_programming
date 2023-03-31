@@ -1,4 +1,3 @@
 #!/bin/bash
-# Makes a request to 0.0.0.0:5000/catch_me that gets the message "You got me!".
-curl -sL -X PUT -H "Origin: HolbertonSchool" -d "user_id=98" 0.0.0.0:5000/catch_me
-
+# Displays the body of the response of a curl POST request
+curl -sLX PUT -d "user_id=98" -H "Origin:NewSchool" 0.0.0.0:5000/catch_me
